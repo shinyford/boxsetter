@@ -1,0 +1,12 @@
+<tr><td>&nbsp;</td></tr>
+<tr>
+  <td><a href="<%= obj['source'] %>"><img src="<%= obj['image'] %>" height="100"></a></td>
+  <td>
+    <h2><a href="<%= obj['source'] %>"><%= obj['title'] %> <%= '(' + obj['count'].to_s + ' children)' unless obj['count'].nil? %></a></h2>
+    <%= obj['description'] %> (<%= obj['reference'] %>)<br/>
+    <span style="font-size: 80%;"><%= obj['addenda'] %></span><br/>
+    <% if obj['editable'] %>
+    	<input style="width: 100%;" type="text" name="<%= obj['type'] %>[<%= obj['id'] %>][editable]" value="<%= obj['editable'] %>"><br/>
+    <% end %>
+  </td>
+</tr>
